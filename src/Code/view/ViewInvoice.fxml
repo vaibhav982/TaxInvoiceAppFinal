@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="942.0" prefWidth="1119.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Code.controller.ViewInvoice">
+   <children>
+      <Text layoutX="954.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Invoice" wrappingWidth="113.99998967349529">
+         <font>
+            <Font name="Century Gothic" size="30.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableID" layoutX="134.0" layoutY="489.0" prefHeight="233.0" prefWidth="838.0">
+         <columns>
+            <TableColumn fx:id="itemDes" prefWidth="422.0" text="Item Description" />
+            <TableColumn fx:id="iQty" minWidth="0.0" prefWidth="106.0" text="Quantity" />
+            <TableColumn fx:id="rate" prefWidth="135.0" text="Rate" />
+            <TableColumn fx:id="ppu" prefWidth="174.0" text="Price per unit" />
+         </columns>
+      </TableView>
+      <Label fx:id="username" layoutX="951.0" layoutY="200.0" prefHeight="22.0" prefWidth="120.0" text="Name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="userCompanyName" layoutX="423.0" layoutY="40.0" prefHeight="35.0" prefWidth="274.0" text="User company name">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="userCompanyAddress" layoutX="386.0" layoutY="97.0" prefHeight="44.0" prefWidth="334.0" text="User company address">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="userCompanyPhoneNum" layoutX="361.0" layoutY="161.0" prefHeight="22.0" prefWidth="192.0" text="User company phone num">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="userCompanyEmail" layoutX="560.0" layoutY="161.0" prefHeight="22.0" prefWidth="179.0" text="User company email">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="taxId" layoutX="991.0" layoutY="86.0" prefHeight="22.0" prefWidth="120.0" text="tax ID">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="CustomerCompanyName" layoutX="146.0" layoutY="278.0" prefHeight="22.0" prefWidth="179.0" text="Customer company name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="CustomerCompanyAddress" layoutX="145.0" layoutY="315.0" prefHeight="44.0" prefWidth="642.0" text="Customer company address">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="CustomerCompanyPhoneNum" layoutX="143.0" layoutY="369.0" prefHeight="22.0" prefWidth="233.0" text="Customer company phone num">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Text layoutX="912.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TAX ID:" wrappingWidth="60.6015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="813.0" layoutY="840.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total:" wrappingWidth="60.6015625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Label fx:id="total" layoutX="874.0" layoutY="824.0" prefHeight="22.0" prefWidth="80.0" text="00" />
+      <ImageView fx:id="CompanyLogo" fitHeight="172.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/Tax_invoice.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="861.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salesman:" wrappingWidth="67.6806640625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="244.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:" wrappingWidth="67.6806640625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="244.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact:" wrappingWidth="67.6806640625">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="112.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer's Detail:" wrappingWidth="120.00001636147499">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

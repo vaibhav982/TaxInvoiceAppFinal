@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="831.0" prefWidth="1241.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Code.controller.ViewOrderHistoryUI">
+   <stylesheets>
+      <URL value="@/resources/stylesheets/app.css" />
+   </stylesheets>
+   <children>
+      <ImageView fx:id="CompanyLogo" fitHeight="172.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/Tax_invoice.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="521.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Invoices" wrappingWidth="198.9999896734953">
+         <font>
+            <Font name="Century Gothic" size="30.0" />
+         </font>
+      </Text>
+      <Text layoutX="156.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Which  Invoice would you like to view" wrappingWidth="548.9999896734953">
+         <font>
+            <Font name="Century Gothic" size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="Open" layoutX="533.0" layoutY="510.0" mnemonicParsing="false" onAction="#SetOpen" prefHeight="80.0" prefWidth="161.0" styleClass="button3" text="Open">
+         <font>
+            <Font name="Century Gothic" size="22.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="OrderList" layoutX="750.0" layoutY="313.0" prefHeight="37.0" prefWidth="259.0" promptText="Select Invoice" style="-fx-background-color: #f7f7f7;" />
+      <Button fx:id="back" layoutX="14.0" layoutY="198.0" mnemonicParsing="false" onAction="#getBack" prefHeight="37.0" prefWidth="142.0" styleClass="button3" text="← Back">
+         <font>
+            <Font name="Century Gothic" size="22.0" />
+         </font>
+      </Button>
+   </children>
+
+<!--   <HBox styleClass="rootNode" alignment="TOP_CENTER"-->
+<!--         xmlns:fx="http://javafx.com/fxml/1">-->
+<!--      <stylesheets>-->
+<!--         <URL value="@/resources/stylesheets/common.css" />-->
+<!--         <URL value="@/resources/stylesheets/invoice.css" />-->
+<!--      </stylesheets>-->
+
+
+<!--      <ScrollPane styleClass="parent" fx:id="scrollPane">-->
+<!--         <HBox alignment="TOP_CENTER" styleClass="parent" minWidth="${scrollPane.viewportBounds.width}">-->
+<!--            <BorderPane fx:id="rootContainer" styleClass="parent">-->
+<!--               <fx:define>-->
+<!--                  <ToggleGroup fx:id="newOrEditToggle" />-->
+<!--                  <ToggleGroup fx:id="cashOrCreditToggle" />-->
+<!--                  <Double fx:constant="MAX_VALUE" fx:id="maxDouble" />-->
+<!--               </fx:define>-->
+<!--               <top>-->
+<!--                  <VBox spacing="8.0" styleClass="parent">-->
+<!--                     <BorderPane.margin>-->
+<!--                        <Insets bottom="10.0" />-->
+<!--                     </BorderPane.margin>-->
+<!--                     <Label text="Invoice"  underline="true" alignment="CENTER"-->
+<!--                            textAlignment="CENTER" maxWidth="$maxDouble" fx:id="heading" />-->
+<!--                     <AnchorPane styleClass="parent">-->
+<!--                        <HBox spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0"  styleClass="parent">-->
+<!--                           <Label text="Invoice Date:" labelFor="$dpInvoiceDate" styleClass="nodeLabel" />-->
+<!--                           <VBox spacing="3.0" styleClass="parent">-->
+<!--                              <DatePicker fx:id="dpInvoiceDate" promptText="e.g. 27.03.2016"  />-->
+<!--                              <Label fx:id="lblDateError" managed="false" visible="false"-->
+<!--                                     styleClass="errorLabel" />-->
+<!--                           </VBox>-->
+<!--                        </HBox>-->
+<!--                        <VBox spacing="8.0" AnchorPane.rightAnchor="10.0"-->
+<!--                              AnchorPane.topAnchor="0.0" alignment="TOP_RIGHT"  styleClass="parent" >-->
+<!--                           <HBox spacing="10.0" alignment="TOP_RIGHT" styleClass="parent">-->
+<!--                              <Label text="Invoice Type:" styleClass="nodeLabel"/>-->
+<!--                              <RadioButton fx:id="cashInvoice" text="Cash"-->
+<!--                                           toggleGroup="$cashOrCreditToggle" selected="true"  />-->
+<!--                              <RadioButton fx:id="creditInvoice" text="Credit" toggleGroup="$cashOrCreditToggle" />-->
+<!--                           </HBox>-->
+<!--                           <HBox spacing="10.0" managed="false" visible="false"  fx:id="customersContainer" styleClass="parent">-->
+<!--                              <Label text="Customer:" styleClass="nodeLabel"/>-->
+<!--                              <VBox spacing="3.0" styleClass="parent">-->
+<!--                                 <TextField fx:id="tfCustomer" prefColumnCount="25"-->
+<!--                                            promptText="&lt;matching customer names appear on typing&gt;" />-->
+<!--                                 <Label fx:id="lblCustomerError" managed="false" visible="false"-->
+<!--                                        styleClass="errorLabel" />-->
+<!--                              </VBox>-->
+<!--                           </HBox>-->
+<!--                        </VBox>-->
+<!--                     </AnchorPane>-->
+<!--                  </VBox>-->
+<!--               </top>-->
+<!--               <center>-->
+<!--                  <BorderPane styleClass="parent">-->
+<!--                     <top>-->
+<!--                        <GridPane hgap="10.0" vgap="3.0" styleClass="parent">-->
+<!--                           <Label GridPane.columnIndex="0"  GridPane.rowIndex="0"  text="Item:"-->
+<!--                                  styleClass="nodeLabel"/>-->
+<!--                           <Label GridPane.columnIndex="1" GridPane.rowIndex="0" text="Unit:"-->
+<!--                                  styleClass="nodeLabel"/>-->
+<!--                           <Label GridPane.columnIndex="2"  GridPane.rowIndex="0"  text="Rate (in &#x20b9;)"-->
+<!--                                  styleClass="nodeLabel"/>-->
+<!--                           <Label GridPane.columnIndex="3" GridPane.rowIndex="0" text="Quantity:"-->
+<!--                                  styleClass="nodeLabel"/>-->
+<!--                           <Label GridPane.columnIndex="4"  GridPane.rowIndex="0"-->
+<!--                                  text="Amount (in &#x20b9;):" styleClass="nodeLabel" />-->
+<!--                           <VBox spacing="3" GridPane.columnIndex="0"  GridPane.rowIndex="1"-->
+<!--                                 styleClass="parent">-->
+<!--                              <TextField fx:id="tfItem" prefColumnCount="25"-->
+<!--                                         promptText="&lt;matching item names appear on typing&gt;" />-->
+<!--                              <Label fx:id="lblItemError" managed="false" visible="false"-->
+<!--                                     styleClass="errorLabel"/>-->
+<!--                           </VBox>-->
+<!--                           <VBox GridPane.columnIndex="1"  GridPane.rowIndex="1"-->
+<!--                                 spacing="3" styleClass="parent">-->
+<!--                              <ComboBox fx:id="cbUnit" minWidth="100" />-->
+<!--                              <Label fx:id="lblUnitError" managed="false" visible="false"-->
+<!--                                     styleClass="errorLabel"/>-->
+<!--                           </VBox>-->
+<!--                           <VBox GridPane.columnIndex="2"  GridPane.rowIndex="1" spacing="3"-->
+<!--                                 styleClass="parent">-->
+<!--                              <TextField fx:id="tfRate" prefColumnCount="7"  />-->
+<!--                              <Label fx:id="lblRateError" managed="false" visible="false"-->
+<!--                                     styleClass="errorLabel" />-->
+<!--                           </VBox>-->
+<!--                           <VBox spacing="3" GridPane.columnIndex="3"  GridPane.rowIndex="1"-->
+<!--                                 styleClass="parent">-->
+<!--                              <TextField fx:id="tfQuantity" prefColumnCount="5"   />-->
+<!--                              <Label fx:id="lblQuantityError" managed="false" visible="false"-->
+<!--                                     styleClass="errorLabel"   />-->
+<!--                           </VBox>-->
+<!--                           <TextField GridPane.columnIndex="4"  GridPane.rowIndex="1"-->
+<!--                                      focusTraversable="false" fx:id="tfAmount" editable="false" prefColumnCount="8"-->
+<!--                                      styleClass="readOnlyField" GridPane.valignment="TOP"   />-->
+<!--                           <HBox spacing="20.0" GridPane.columnIndex="5"  GridPane.rowIndex="1"-->
+<!--                                 GridPane.valignment="TOP">-->
+<!--                              <Button fx:id="btnAdd" minWidth="50" text="Add"-->
+<!--                                      disable="true"   />-->
+<!--                              <HBox styleClass="parent" fx:id="updateButtonsPane" spacing="10.0" >-->
+<!--                                 <RadioButton fx:id="rdNew" text="Add Item" selected="true"-->
+<!--                                              toggleGroup="$newOrEditToggle" />-->
+<!--                                 <RadioButton fx:id="rdEdit" text="Edit Item"-->
+<!--                                              toggleGroup="$newOrEditToggle" />-->
+<!--                              </HBox>-->
+<!--                           </HBox>-->
+<!--                        </GridPane>-->
+<!--                     </top>-->
+<!--                     <center>-->
+<!--                        <BorderPane styleClass="parent">-->
+<!--                           <BorderPane.margin>-->
+<!--                              <Insets top="10.0" />-->
+<!--                           </BorderPane.margin>-->
+<!--                           <center>-->
+<!--                              <VBox spacing="7.0" styleClass="parent">-->
+<!--                                 <VBox spacing="3.0" VBox.vgrow="ALWAYS" styleClass="parent" >-->
+<!--                                    <StackPane alignment="TOP_CENTER" VBox.vgrow="ALWAYS">-->
+<!--                                       <TableView fx:id="tableView" prefHeight="200" maxHeight="$maxDouble" VBox.vgrow="ALWAYS"  >-->
+<!--                                          <columns>-->
+<!--                                             <TableColumn fx:id="itemColumn" text="Item"  minWidth="150" prefWidth="370" >-->
+<!--                                                <cellValueFactory>-->
+<!--                                                   <PropertyValueFactory property="item" />-->
+<!--                                                </cellValueFactory>-->
+<!--                                             </TableColumn>-->
+<!--                                             <TableColumn fx:id="unitColumn" text="Unit" minWidth="70" prefWidth="120" >-->
+<!--                                                <cellValueFactory>-->
+<!--                                                   <PropertyValueFactory property="unit" />-->
+<!--                                                </cellValueFactory>-->
+<!--                                             </TableColumn>-->
+<!--                                             <TableColumn fx:id="rateColumn" text="Rate (in &#x20b9;)" minWidth="70" prefWidth="120">-->
+<!--                                                <cellValueFactory>-->
+<!--                                                   <PropertyValueFactory property="rate" />-->
+<!--                                                </cellValueFactory>-->
+<!--                                             </TableColumn>-->
+<!--                                             <TableColumn fx:id="quantityColumn" text="Quantity" minWidth="70" prefWidth="120" >-->
+<!--                                                <cellValueFactory>-->
+<!--                                                   <PropertyValueFactory property="quantity" />-->
+<!--                                                </cellValueFactory>-->
+<!--                                             </TableColumn>-->
+<!--                                             <TableColumn fx:id="amountColumn" text="Amount (in &#x20b9;)" minWidth="90" prefWidth="140" >-->
+<!--                                             </TableColumn>-->
+<!--                                          </columns>-->
+<!--                                          <columnResizePolicy>-->
+<!--                                             <TableView fx:constant="UNCONSTRAINED_RESIZE_POLICY" />-->
+<!--                                          </columnResizePolicy>-->
+<!--                                          <placeholder>-->
+<!--                                             <Label text="&lt; No Item Added &gt;" fx:id="placeholderText" />-->
+<!--                                          </placeholder>-->
+<!--                                       </TableView>-->
+<!--                                       <ImageView fx:id="checkImage" opacity="0" >-->
+<!--                                          <image>-->
+<!--                                             <Image url="src/resources/images/check.png" />-->
+<!--                                          </image>-->
+<!--                                       </ImageView>-->
+<!--                                    </StackPane>-->
+<!--                                    <Label fx:id="lblNoItemError" managed="false" visible="false"-->
+<!--                                           styleClass="errorLabel" />-->
+<!--                                 </VBox>-->
+<!--                                 <VBox spacing="6.0" VBox.vgrow="NEVER" styleClass="parent">-->
+<!--                                    <AnchorPane styleClass="parent">-->
+<!--                                       <HBox spacing="15.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" styleClass="parent">-->
+<!--                                          <Button fx:id="btnRefreshCustomers" styleClass="graphicButton" >-->
+<!--                                             <graphic>-->
+<!--                                                <ImageView>-->
+<!--                                                   <image>-->
+<!--                                                      <Image url="src/resources/images/refresh_customer.png" />-->
+<!--                                                   </image>-->
+<!--                                                </ImageView>-->
+<!--                                             </graphic>-->
+<!--                                             <tooltip>-->
+<!--                                                <Tooltip text="Refresh Customers List"   />-->
+<!--                                             </tooltip>-->
+<!--                                          </Button>-->
+<!--                                          <Button fx:id="btnRefreshItems" styleClass="graphicButton">-->
+<!--                                             <graphic>-->
+<!--                                                <ImageView>-->
+<!--                                                   <image>-->
+<!--                                                      <Image url="src/resources/images/refresh_item.png" />-->
+<!--                                                   </image>-->
+<!--                                                </ImageView>-->
+<!--                                             </graphic>-->
+<!--                                             <tooltip>-->
+<!--                                                <Tooltip text="Refresh Items List"   />-->
+<!--                                             </tooltip>-->
+<!--                                          </Button>-->
+<!--                                          <Button fx:id="btnRefreshUnits" styleClass="graphicButton" >-->
+<!--                                             <graphic>-->
+<!--                                                <ImageView>-->
+<!--                                                   <image>-->
+<!--                                                      <Image url="src/resources/images/refresh_measurement_unit.png" />-->
+<!--                                                   </image>-->
+<!--                                                </ImageView>-->
+<!--                                             </graphic>-->
+<!--                                             <tooltip>-->
+<!--                                                <Tooltip text="Refresh Measurement Units List"  />-->
+<!--                                             </tooltip>-->
+<!--                                          </Button>-->
+<!--                                       </HBox>-->
+
+<!--                                       <HBox spacing="5.0" alignment="TOP_RIGHT" styleClass="parent"-->
+<!--                                             AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0" >-->
+<!--                                          <Label text="Sub Total ( in &#x20b9;):" labelFor="$tfTotal" styleClass="nodeLabel"/>-->
+<!--                                          <TextField fx:id="tfTotal" prefColumnCount="12" focusTraversable="false"-->
+<!--                                                     editable="false" alignment="CENTER_RIGHT"  styleClass="readOnlyField"    />-->
+<!--                                       </HBox>-->
+
+
+<!--                                    </AnchorPane>-->
+
+<!--                                    <HBox spacing="5.0" alignment="TOP_RIGHT" styleClass="parent">-->
+<!--                                       <Label text="Less: Discount (if any) (&#x20b9;):" labelFor="$tfDiscount" styleClass="nodeLabel"/>-->
+<!--                                       <VBox spacing="3" styleClass="parent">-->
+<!--                                          <TextField fx:id="tfDiscount" prefColumnCount="12"-->
+<!--                                                     alignment="CENTER_RIGHT"  />-->
+<!--                                          <Label fx:id="lblDiscountError" managed="false" visible="false"-->
+<!--                                                 styleClass="errorLabel"/>-->
+<!--                                       </VBox>-->
+<!--                                    </HBox>-->
+<!--                                    <HBox spacing="5.0" alignment="TOP_RIGHT" styleClass="parent">-->
+<!--                                       <Label text="Add: Additional Charge (if any) (&#x20b9;):" labelFor="$tfCharge" styleClass="nodeLabel"/>-->
+<!--                                       <VBox spacing="3" styleClass="parent">-->
+<!--                                          <TextField fx:id="tfCharge" prefColumnCount="12"-->
+<!--                                                     alignment="CENTER_RIGHT"      />-->
+<!--                                          <Label fx:id="lblChargeError" managed="false" visible="false"-->
+<!--                                                 styleClass="errorLabel"/>-->
+<!--                                       </VBox>-->
+<!--                                    </HBox>-->
+<!--                                    <HBox spacing="5.0" alignment="TOP_RIGHT" styleClass="parent">-->
+<!--                                       <Label text="Net Amount (&#x20b9;):" labelFor="$tfNetAmount"-->
+<!--                                              styleClass="summation,nodeLabel" />-->
+<!--                                       <TextField fx:id="tfNetAmount" prefColumnCount="11"  editable="false"-->
+<!--                                                  focusTraversable="false"      alignment="CENTER_RIGHT"   styleClass="readOnlyField,summation"  />-->
+<!--                                    </HBox>-->
+<!--                                 </VBox>-->
+<!--                              </VBox>-->
+<!--                           </center>-->
+<!--                           <right>-->
+<!--                              <VBox styleClass="parent">-->
+<!--                                 <BorderPane.margin>-->
+<!--                                    <Insets left="10.0" />-->
+<!--                                 </BorderPane.margin>-->
+<!--                                 <Button fx:id="btnDelete" text="Delete"  />-->
+<!--                              </VBox>-->
+<!--                           </right>-->
+<!--                        </BorderPane>-->
+<!--                     </center>-->
+<!--                  </BorderPane>-->
+<!--               </center>-->
+<!--               <bottom>-->
+<!--                  <VBox spacing="10.0">-->
+<!--                     <BorderPane.margin>-->
+<!--                        <Insets top="15.0" />-->
+<!--                     </BorderPane.margin>-->
+<!--                     <Separator />-->
+<!--                     <HBox  alignment="BOTTOM_RIGHT" spacing="25.0" styleClass="parent">-->
+<!--                        <children>-->
+<!--                           <CheckBox fx:id="chkPrintOnSave" text="Print on Save" selected="true"-->
+<!--                                     styleClass="nodeLabel" >-->
+<!--                              <tooltip>-->
+<!--                                 <Tooltip text="Prints the invoice on saving it" />-->
+<!--                              </tooltip>-->
+<!--                           </CheckBox>-->
+<!--                           <TilePane prefColumns="2"  hgap="25.0">-->
+<!--                              <Button fx:id="btnSave" text="_Save" mnemonicParsing="true"-->
+<!--                                      TilePane.alignment="BOTTOM_RIGHT"  maxWidth="$maxDouble" />-->
+<!--                              <Button fx:id="btnClose" text="_Close" mnemonicParsing="true"-->
+<!--                                      maxWidth="$maxDouble" TilePane.alignment="BOTTOM_RIGHT" cancelButton="true"  />-->
+<!--                           </TilePane>-->
+<!--                        </children>-->
+<!--                     </HBox>-->
+<!--                  </VBox>-->
+
+<!--               </bottom>-->
+
+<!--            </BorderPane>-->
+<!--         </HBox>-->
+<!--      </ScrollPane>-->
+<!--   </HBox>-->
+
+</AnchorPane>
